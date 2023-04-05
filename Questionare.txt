@@ -1,0 +1,37 @@
+Q1. once user buy the box he will be the owner of that box
+    currently ownership transfer is not available for that box
+     
+Q2. once user create the box every time new unique box will be createed for 
+    the user who purchase the box. and any user can create whatever amount of
+    boxes they want to create for them.
+
+Q3. yes there is a storage limit. each package has its own price and storage. 
+    for encryption as we only store CID in smartcontract with its size in KB and ite file type and we store data on 
+    IPFS so it is not possible to perform encryption of data in smartcontract
+    we have to encrypt the data in frontend and then store it to ipfs.
+
+
+--- Our Current Flow ---
+
+1.  User A will purchase the box with factory(subscription) contract.
+    the transaction fee will be transfered to the subscription smart contract.
+    
+2.  a new box address will assign to the user A which has it own seperate storage.
+    user A can manage his box with box contract.
+
+3.  if user B request for box access owned by user A. then 
+    user A or owner of Factory(subscription) contract will approve
+    or denied the request. 
+
+4.  owner of Factory(Subscription) also allow some users to manage access requests
+    so now these users can also accept or denied the access requests of specific box
+
+5.  Now if user A wants to purhcase the new box. he has to purchase it from subscription contract
+    when purchased a new box with unique id will we assigned to the user A.
+
+6.  when user add the file to the box first file will be encrypted then uploaded to the ipfs
+    then responce will be stored in blockchain which inclues
+    (url of file stored on ipfs, size of file stored on ipfs, file extension)
+
+7.  then allowed users and box admin can see the files.
+    

@@ -1,0 +1,95 @@
+----- Subscription Contract Functions -----
+
+    1. getSubscriptionPlanDetails
+        it took one argument which is index of packages array
+    
+    2. updateSubscriptionPlan
+        it took 3 arguments 
+            index of package you want to update
+            updated price for the package
+            updated storage for the Package
+        only called by the owner of this contract
+    
+    3. createNewSubscriptionPlan
+        it took 2 arguments price and storage
+        only called by owner of this Contract
+
+    4. removeSubscriptionPlan
+        it took 1 argument which is index of package from packages array
+        only called by owner of this contract
+    
+    5. subscribe
+        it took 1 argument which is index of package from packages array
+        require required price for the selected package.
+
+    6. checkSubscriptionStatus 
+        it took 1 argument address type can be called only allowed users
+        it will check if given address have subscription or not 
+        it returns boolian
+
+    7. getUserAllBoxes
+        it took 1 argument address type can be called only allowed users
+        returns all owned boxex details of user like (package price and storage)
+
+    8. getUserAllBoxesInfo
+        it took 1 argument address type can be called only allowed users
+        returns all owned boxex info of user
+
+    9. getUserBoxByIndex
+        it took 2 arguments address type and index can be called only allowed users
+        returns all owned box details for given index of user like (package price and storage)
+
+    10. getBoxMemorybyIndex
+        it took 2 arguments address type and index can be called only allowed users
+        returns all owned box storage info details for given index of user like (package price and storage)
+
+-------------------------------------------------------------------------------
+
+----- Box Contract Functions -----
+
+    1. addFile
+        it took 3 arguments
+            uri of this file after it successfully uploaded to IPFS
+            size of the file in KBs
+            file type
+        can only be called by box owner
+        
+    2. getFileById
+        it took one argument type integer
+        users can files by the ids generally ids start from 1. and incriment by 1 when new files addes to the box
+        can be only called by owner and allowed users
+
+    3. getAllFile
+        return all files of box owner can be accessable by only admin and allowed users
+    
+    4. getUsedStorage
+        return used storage of box can be only called by box owner
+    
+    5. getTotalStorage
+        return total box storage of user can be only called by the box owner 
+    
+    6. setAllowedUser
+        it took 1 argument type address
+        box owner can allows any specific user for the box access
+    
+    7. removeAllowedUser
+        it took 1 argument type address
+        box owner can remove allow access of any specific user
+    
+    
+    8. checkAllowedStatus
+        it took 1 argument type address
+        users can check there allowed status for box access
+       
+    9. requestAccessForBox
+        users can request for box access
+    
+    10. requestAccept
+        it took 1 argument type address
+        admin can approve specific user for box access
+    
+    11. checkRequestAccessStatus
+        users can check if there access request is approved or not
+    
+    12. checkRequestedAccessList
+        admin can check who request for the box access
